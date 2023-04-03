@@ -1,0 +1,23 @@
+---
+
+- name: Installation of nginx
+  hosts: localhost
+  become: true
+
+  tasks:
+    - name: Install nginx
+      ansible.builtin.yum:
+        name: nginx
+        state: present
+
+#    - name: Configuration of nginx
+#     become: true
+#      ansible.builtin.shell:
+#        cmd: semanage port -a -t http_port_t -p tcp 80 && semanage port -m -t http_port_t -p tcp 80
+#      register: my_output # <- Registers the command output.
+#      changed_when: my_output.rc != 0 # <- Uses the return code to define when the task has changed.
+
+    - name: Start service
+      ansible.builtin.service:
+        name: nginx
+        state: started
