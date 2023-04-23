@@ -1,0 +1,15 @@
+---
+- name : nginx installation playbook
+  hosts : all
+  become : yes
+
+  tasks :
+   - name : nginx serivce stop
+     service :
+        name : nginx
+        state : stopped
+   - name : nginx installation
+     yum : 
+        name : nginx
+        state : absent
+
