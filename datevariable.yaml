@@ -1,0 +1,12 @@
+---
+- name: testing variable stuff
+  hosts: localhost
+  remote_user: flux
+
+  tasks:
+    - name: get date on the server
+      shell: date
+      register: output
+      # output is a variable in which date output is stored.
+
+    - debug: msg="The date is {{output.stdout}}"
