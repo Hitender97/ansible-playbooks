@@ -1,0 +1,3 @@
+1) ansible -i entries hosts -m ping -u ansible1 #ping cluster of servers saved in hosts inventory to check the accessiblity
+2) ansible -i entries hosts -m command -u ansible1 -a "df -Th" # check the disk space of servers present in hosts inventory
+3) ansible -i entries hosts -m shell -u ansible1 -a "ps aux | grep java; systemctl status tomcat.service" #check if java application and tomcat is running of not
