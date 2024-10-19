@@ -1,15 +1,14 @@
 ---
-- name : nginx installation playbook
-  hosts : all
-  become : yes
+- name: Uninstall nginx playbook
+  hosts: all
+  become: true
 
-  tasks :
-   - name : nginx serivce stop
-     service :
-        name : nginx
-        state : stopped
-   - name : nginx installation
-     yum : 
-        name : nginx
-        state : absent
-
+  tasks:
+   - name: Nginx serivce stop
+     service:
+        name: nginx
+        state: stopped
+   - name: nginx installation
+     yum: 
+        name: nginx
+        state: absent
