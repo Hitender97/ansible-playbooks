@@ -5,10 +5,10 @@
 
   tasks:
    - name: Nginx serivce stop
-     service:
-        name: nginx
-        state: stopped
-   - name: nginx installation
-     yum: 
-        name: nginx
-        state: absent
+     ansible.builtin.service:
+      name: nginx
+      state: stopped
+   - name: Nginx installation
+     ansible.builtin.yum:
+      name: nginx
+      state: absent
