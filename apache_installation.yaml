@@ -1,0 +1,17 @@
+---
+- name: Apache installation and configuration
+  hosts: all
+  become: true
+  tasks:
+     - name: Install apache to ec2 managed nodes
+       ansible.builtin.dnf:
+          name: httpd
+          state: present
+          update_cache: true
+     - name: Copy file with owner and permissions
+       ansible.builtin.copy:
+          src: index.html
+          dest: /var/www/html
+          owner: root
+          group: root
+          mode: '0644'
