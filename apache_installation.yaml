@@ -15,3 +15,7 @@
           owner: root
           group: root
           mode: '0644'
+     - name: Start apache service
+       ansible.builtin.systemd_service:
+          name: httpd
+          state: started
