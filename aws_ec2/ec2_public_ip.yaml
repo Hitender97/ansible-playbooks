@@ -1,0 +1,8 @@
+---
+- name: Launch ec2 instace using ansible.builtin.copy
+  hosts: localhost
+  connection: local
+  vars_files:
+   - ec2/group_vars/all/pass.yaml
+  roles:
+   - ec2
