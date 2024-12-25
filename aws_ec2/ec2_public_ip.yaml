@@ -1,8 +1,8 @@
 ---
-- name: Launch ec2 instace using ansible.builtin.copy
+- name: Launch EC2 instance using Ansible
   hosts: localhost
   connection: local
   vars_files:
-   - ec2/group_vars/all/pass.yaml
+    - ec2/group_vars/all/pass.yaml
   roles:
-   - ec2
+    - ec2
